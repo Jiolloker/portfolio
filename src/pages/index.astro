@@ -1,11 +1,77 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import SocialPill from "../components/SocialPill.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Portfolio de Jonathan - Full Stack Developer">
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="rounded-full size-12 object-cover mb-4"
+        src="./src/assets/perfil.jpg"
+        alt="Polite Cat"
+      />
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex 
+      flex-row gap-x-4 pb-6 lg:pb-10">
+        Hey, I'm Jonathan
+        <div class="flex items-center justify-center">
+          <a
+            href="https://www.linkedin.com/in/jonathan-kevin-lee-489868241"
+            target="_blank"
+            rel="noopener"><Badge>Available for hire</Badge></a
+          >
+        </div>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span>+1 year of experience.</span>
+        <span class="text-yellow-200/90"
+          >I'm a Full Stack Developer with a focus on Frontend.</span
+        >
+        <span class="text-blue-200/90">I'm from Buenos Aires, Argentina.</span>
+        <span class="opacity-70"
+          >I enjoy pushing the limits and learning new technologies.</span
+        >
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+          <SocialPill href="https://www.linkedin.com/in/jonathan-kevin-lee-489868241">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+          </SocialPill>
+          <SocialPill href="https://github.com/Jiolloker">
+            <GithubIcon class="size-4 md:size-6" />
+            Github
+          </SocialPill>
+          <SocialPill href="mailto:jiolloker@hotmail.com">
+            <MailIcon class="size-4 md:size-6" />
+            jiolloker@hotmail.com
+          </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="projects">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
 </Layout>
